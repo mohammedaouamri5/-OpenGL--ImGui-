@@ -80,6 +80,14 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/BRUH",
+            "binaryPath": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/BRUH/BRUH",
+            "binaryArgs": []
+        }
+    ],
+    "editor.fontFamily": "FiraCode Nerd Font"
     
 }

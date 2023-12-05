@@ -24,8 +24,8 @@ project "BRUH"
       "../vendor/spdlog/include" ,
       "../vendor/" ,
       "../vendor",
-      "../vendor/X11" ,
-           "%{IncludeDir.glm}",
+      "../vendor/X11"  ,                     
+      "%{IncludeDir.glm}" ,                  
       "%{IncludeDir.X11}"
 
    }
