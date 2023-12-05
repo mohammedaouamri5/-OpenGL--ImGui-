@@ -1,0 +1,22 @@
+﻿  CHANGE.cpp
+C:\DEV\C_C++\BRUH\BRUH\src\io\CHANGE.cpp(26,35): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\DEV\C_C++\BRUH\BRUH\src\io\CHANGE.cpp(26,34): warning C4244: '=': conversion from 'const _Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\DEV\C_C++\BRUH\BRUH\src\io\CHANGE.cpp(27,35): warning C4244: 'argument': conversion from 'int' to 'const _Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+C:\DEV\C_C++\BRUH\BRUH\src\io\CHANGE.cpp(27,34): warning C4244: '=': conversion from 'const _Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+  BRUH.vcxproj -> C:\DEV\C_C++\BRUH\bin\Release-windows-x86_64\BRUH\BRUH.exe

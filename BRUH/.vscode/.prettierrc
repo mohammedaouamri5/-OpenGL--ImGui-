@@ -1,0 +1,28 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["*.cpp", "*.h"],
+      "options": {
+        "parser": "cpp",
+        "singleQuote": false,
+        "bracketSpacing": false,
+        "arrowParens": "avoid",
+        "overrides": [
+          {
+            "files": ["*.cpp", "*.h"],
+            "options": {
+              "parser": "cpp",
+              "singleQuote": false,
+              "bracketSpacing": false
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

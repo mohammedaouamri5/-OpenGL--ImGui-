@@ -1,0 +1,2 @@
+﻿  main.cpp
+C:\DEV\C_C++\BRUH\BRUH\src\main.cpp(7,1): fatal  error C1083: Cannot open include file: 'imgui_impl_glfw.h': No such file or directory

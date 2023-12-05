@@ -1,0 +1,11 @@
+﻿  Paying.cpp
+  Retireds.cpp
+  db-conect.cpp
+C:\DEV\C_C++\BRUH\BRUH\src\Data\db-conect.cpp(56,52): warning C4477: 'snprintf' : format string '%f' requires an argument of type 'double', but variadic argument 2 has type 'int'
+C:\DEV\C_C++\BRUH\BRUH\src\Data\db-conect.cpp(105,9): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\C_C++\BRUH\BRUH\src\Data\db-conect.cpp(113,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\C_C++\BRUH\BRUH\src\Data\db-conect.cpp(117,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\C_C++\BRUH\BRUH\src\Data\db-conect.cpp(174,29): warning C4474: 'snprintf' : too many arguments passed for format string
+C:\DEV\C_C++\BRUH\BRUH\src\Data\db-conect.cpp(174,29): message : placeholders and their parameters expect 6 variadic arguments, but 7 were provided
+  Generating Code...
+  BRUH.vcxproj -> C:\DEV\C_C++\BRUH\bin\Debug-windows-x86_64\BRUH\BRUH.exe
