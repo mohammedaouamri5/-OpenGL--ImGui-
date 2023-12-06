@@ -7,8 +7,7 @@ project "GLFW"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files
-	{
+	files {
 		"include/GLFW/glfw3.h",
 		"include/GLFW/glfw3native.h",
 		"src/glfw_config.h",
@@ -56,8 +55,7 @@ project "GLFW"
 	filter "system:macosx"
 		pic "On"
 
-		files
-		{
+		files {
 			"src/cocoa_init.m",
 			"src/cocoa_monitor.m",
 			"src/cocoa_window.m",

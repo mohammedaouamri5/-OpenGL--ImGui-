@@ -1,1 +1,1 @@
-builde/Dist-linux-x86_64/BRUH/BRUH
+builde/Debug-linux-x86_64/BRUH/BRUH

@@ -4,4 +4,4 @@ bin-int/**
 bin-int/ 
 builde/ 
 builde/** 
- 
+.vscode/**

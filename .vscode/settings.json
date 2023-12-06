@@ -81,13 +81,17 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
+    "code-runner.customCommand": "bash run.sh",
     "makefile.launchConfigurations": [
+        
         {
             "cwd": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/BRUH",
             "binaryPath": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/BRUH/BRUH",
             "binaryArgs": []
         }
     ],
-    "editor.fontFamily": "FiraCode Nerd Font"
-    
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "C_Cpp.debugger.useBacktickCommandSubstitution": true,
+    "makefile.buildLog": "/home/midou/DEV/C++/[OpenGL][ImGui]/LOG.LOG"
+   
 }
