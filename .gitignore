@@ -5,3 +5,9 @@ bin-int/
 builde/ 
 builde/** 
 .vscode/**
+.vscode/
+imgui.ini
+Makfile
+vendor/yaml-cpp/Makefile
+vendor/imgui/Makefile
+vendor/GLFW/Makefile

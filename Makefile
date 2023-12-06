@@ -12,25 +12,25 @@ ifeq ($(config),debug)
   ImGui_config = debug
   GLFW_config = debug
   yaml_cpp_config = debug
-  BRUH_config = debug
+  main_config = debug
 
 else ifeq ($(config),release)
   ImGui_config = release
   GLFW_config = release
   yaml_cpp_config = release
-  BRUH_config = release
+  main_config = release
 
 else ifeq ($(config),dist)
   ImGui_config = dist
   GLFW_config = dist
   yaml_cpp_config = dist
-  BRUH_config = dist
+  main_config = dist
 
 else
   $(error "invalid configuration $(config)")
 endif
 
-PROJECTS := ImGui GLFW yaml-cpp BRUH
+PROJECTS := ImGui GLFW yaml-cpp main
 
 .PHONY: all clean help $(PROJECTS) Dependencies
 
@@ -56,17 +56,17 @@ ifneq (,$(yaml_cpp_config))
 	@${MAKE} --no-print-directory -C vendor/yaml-cpp -f Makefile config=$(yaml_cpp_config)
 endif
 
-BRUH: ImGui GLFW
-ifneq (,$(BRUH_config))
-	@echo "==== Building BRUH ($(BRUH_config)) ===="
-	@${MAKE} --no-print-directory -C BRUH -f Makefile config=$(BRUH_config)
+main: ImGui GLFW
+ifneq (,$(main_config))
+	@echo "==== Building main ($(main_config)) ===="
+	@${MAKE} --no-print-directory -C main -f Makefile config=$(main_config)
 endif
 
 clean:
 	@${MAKE} --no-print-directory -C vendor/imgui -f Makefile clean
 	@${MAKE} --no-print-directory -C vendor/GLFW -f Makefile clean
 	@${MAKE} --no-print-directory -C vendor/yaml-cpp -f Makefile clean
-	@${MAKE} --no-print-directory -C BRUH -f Makefile clean
+	@${MAKE} --no-print-directory -C main -f Makefile clean
 
 help:
 	@echo "Usage: make [config=name] [target]"
@@ -82,6 +82,6 @@ help:
 	@echo "   ImGui"
 	@echo "   GLFW"
 	@echo "   yaml-cpp"
-	@echo "   BRUH"
+	@echo "   main"
 	@echo ""
 	@echo "For more information, see https://github.com/premake/premake-core/wiki"

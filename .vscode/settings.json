@@ -85,8 +85,8 @@
     "makefile.launchConfigurations": [
         
         {
-            "cwd": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/BRUH",
-            "binaryPath": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/BRUH/BRUH",
+            "cwd": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/main",
+            "binaryPath": "/home/midou/DEV/C++/builde/Debug-linux-x86_64/main/main",
             "binaryArgs": []
         }
     ],

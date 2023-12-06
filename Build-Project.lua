@@ -1,8 +1,8 @@
 -- premake5.lua
-workspace "BRUH"
+workspace "main"
    architecture "x64"
    configurations { "Debug", "Release", "Dist" }
-   startproject "BRUH"
+   startproject "main"
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"
@@ -11,4 +11,4 @@ workspace "BRUH"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "Build-External.lua"
-include "BRUH/Build-BRUH.lua"
+include "main/Build-main.lua"
