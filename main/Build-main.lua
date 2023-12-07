@@ -25,7 +25,6 @@ project "main"
       "../vendor/spdlog/include" ,
       "../vendor/" ,
       "../vendor",
-      "../vendor/X11"  ,                     
       "%{IncludeDir.glm}" ,                  
       "%{IncludeDir.X11}"
 
@@ -34,11 +33,21 @@ project "main"
 
    links {
            "ImGui","stb_image", "SOIL",
-           "GLFW",   "GL", "X11", "pthread", "Xrandr", "Xi", "dl" 
+           "GLFW",   "GL",  
           }
 
    targetdir ("../builde/" .. outputdir .. "/%{prj.name}")
    objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
+
+   filter "system:linux"
+      includedirs {
+          "../vendor/X11"
+      }
+      links {
+          "X11", "Xrandr", "Xi"
+      }
+
+
 
    filter "system:windows"
       systemversion "latest"

@@ -19,7 +19,7 @@ endif
 # #############################################
 
 RESCOMP = windres
-INCLUDES += -I../vendor/imgui -I../vendor/imgui/backends -I../vendor/GLFW/include -I../vendor/GL -I../vendor/stb_image -I../vendor/SOIL -I../vendor/glm -I../vendor/spdlog/include -I../vendor -I../vendor/X11 -I.
+INCLUDES += -I../vendor/imgui -I../vendor/imgui/backends -I../vendor/GLFW/include -I../vendor/GL -I../vendor/stb_image -I../vendor/SOIL -I../vendor/glm -I../vendor/spdlog/include -I../vendor -I. -I../vendor/X11
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
@@ -38,7 +38,7 @@ OBJDIR = ../bin-int/Debug-linux-x86_64/main
 DEFINES += -DWL_DEBUG
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17
-LIBS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Debug-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Debug-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LIBS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Debug-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Debug-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lXrandr -lXi
 LDDEPS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Debug-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Debug-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
 
@@ -49,7 +49,7 @@ OBJDIR = ../bin-int/Release-linux-x86_64/main
 DEFINES += -DWL_RELEASE
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -g -std=c++17
-LIBS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Release-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Release-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LIBS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Release-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Release-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lXrandr -lXi
 LDDEPS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Release-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Release-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
 
@@ -60,7 +60,7 @@ OBJDIR = ../bin-int/Dist-linux-x86_64/main
 DEFINES += -DWL_DIST
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
-LIBS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Dist-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Dist-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LIBS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Dist-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Dist-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lXrandr -lXi
 LDDEPS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Dist-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Dist-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
 

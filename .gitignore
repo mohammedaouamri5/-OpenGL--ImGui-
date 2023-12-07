@@ -16,7 +16,8 @@ vendor/GLFW/Makefile
 bin/
 bin-int/
 
-# Files
+LOG*
+
 *Makfile
 *.ini
 
