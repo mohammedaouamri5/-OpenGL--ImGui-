@@ -19,7 +19,8 @@ project "main"
       "../vendor/imgui/backends/",
       "../vendor/GLFW/include",
       "../vendor/GL",
-      
+      "../vendor/stb_image", 
+      "../vendor/SOIL", 
       "../vendor/glm" ,
       "../vendor/spdlog/include" ,
       "../vendor/" ,
@@ -32,7 +33,7 @@ project "main"
    
 
    links {
-           "ImGui",
+           "ImGui","stb_image", "SOIL",
            "GLFW",   "GL", "X11", "pthread", "Xrandr", "Xi", "dl" 
           }
 

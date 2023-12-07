@@ -19,7 +19,7 @@ endif
 # #############################################
 
 RESCOMP = windres
-INCLUDES += -I../vendor/imgui -I../vendor/imgui/backends -I../vendor/GLFW/include -I../vendor/GL -I../vendor/glm -I../vendor/spdlog/include -I../vendor -I../vendor/X11 -I.
+INCLUDES += -I../vendor/imgui -I../vendor/imgui/backends -I../vendor/GLFW/include -I../vendor/GL -I../vendor/stb_image -I../vendor/SOIL -I../vendor/glm -I../vendor/spdlog/include -I../vendor -I../vendor/X11 -I.
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
@@ -38,8 +38,8 @@ OBJDIR = ../bin-int/Debug-linux-x86_64/main
 DEFINES += -DWL_DEBUG
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17
-LIBS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
-LDDEPS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a
+LIBS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Debug-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Debug-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LDDEPS += ../vendor/imgui/bin/Debug-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Debug-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Debug-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Debug-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
 
 else ifeq ($(config),release)
@@ -49,8 +49,8 @@ OBJDIR = ../bin-int/Release-linux-x86_64/main
 DEFINES += -DWL_RELEASE
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -g -std=c++17
-LIBS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
-LDDEPS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a
+LIBS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Release-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Release-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LDDEPS += ../vendor/imgui/bin/Release-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Release-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Release-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Release-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
 
 else ifeq ($(config),dist)
@@ -60,8 +60,8 @@ OBJDIR = ../bin-int/Dist-linux-x86_64/main
 DEFINES += -DWL_DIST
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
-LIBS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
-LDDEPS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a
+LIBS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Dist-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Dist-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a -lGL -lX11 -lpthread -lXrandr -lXi -ldl
+LDDEPS += ../vendor/imgui/bin/Dist-linux-x86_64/ImGui/libImGui.a ../vendor/stb_image/bin/Dist-linux-x86_64/stb_image/libstb_image.a ../vendor/SOIL/bin/Dist-linux-x86_64/SOIL/libSOIL.a ../vendor/GLFW/bin/Dist-linux-x86_64/GLFW/libGLFW.a
 ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
 
 endif
@@ -76,14 +76,16 @@ endif
 GENERATED :=
 OBJECTS :=
 
+GENERATED += $(OBJDIR)/Win.o
+GENERATED += $(OBJDIR)/bruh.o
 GENERATED += $(OBJDIR)/imgui_impl_glfw.o
 GENERATED += $(OBJDIR)/imgui_impl_opengl3.o
 GENERATED += $(OBJDIR)/main.o
-GENERATED += $(OBJDIR)/main1.o
+OBJECTS += $(OBJDIR)/Win.o
+OBJECTS += $(OBJDIR)/bruh.o
 OBJECTS += $(OBJDIR)/imgui_impl_glfw.o
 OBJECTS += $(OBJDIR)/imgui_impl_opengl3.o
 OBJECTS += $(OBJDIR)/main.o
-OBJECTS += $(OBJDIR)/main1.o
 
 # Rules
 # #############################################
@@ -147,16 +149,19 @@ endif
 # File Rules
 # #############################################
 
+$(OBJDIR)/bruh.o: src/bruh.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Win.o: src/core/Win.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/imgui_impl_glfw.o: src/imgui/imgui_impl_glfw.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/imgui_impl_opengl3.o: src/imgui/imgui_impl_opengl3.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/main.o: src/io/main.cpp
-	@echo "$(notdir $<)"
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/main1.o: src/main.cpp
+$(OBJDIR)/main.o: src/main.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

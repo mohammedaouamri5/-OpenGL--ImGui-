@@ -15,6 +15,8 @@ group "Dependencies"
    include "vendor/imgui"
    include "vendor/GLFW"
    include "vendor/yaml-cpp"
+   include "vendor/stb_image"
+   include "vendor/SOIL"
 group ""
 
 -- group "Core"
