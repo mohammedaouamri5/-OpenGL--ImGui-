@@ -3,6 +3,12 @@
         "minimap.background": "#00000000",
         "scrollbar.shadow": "#00000000"
     },
+    "files.exclude": {
+        // "bin-int": true,
+        "*.sh":true,
+        "*.ini": true,  
+        // ".venv":true
+    },
     "files.associations": {
         "option.h": "c",
         "stdlib.h": "c",

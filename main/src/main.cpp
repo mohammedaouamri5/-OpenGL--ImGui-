@@ -4,10 +4,10 @@
 #include "imgui.h"
 #include <iostream>
 #include <memory>
-
+#include "math/Vector.hpp"
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
-
+#include "stb_image.h"
+#include"core/Image.hpp"
 // Simple helper function to load an image into an OpenGL texture with common settings
 
 static int WOW = 1;
@@ -18,27 +18,34 @@ void Test()
 
 class ExampleLayer : public CORE::Layout
 {
+    
+    CORE::Image img1 = CORE::Image("img/WOW.png"  , GL_RGBA);
+    CORE::Image img2 = CORE::Image("img/WOW.png"  , GL_RGBA);
 public:
     virtual void INIT() override
     {
-        this->textureID = LoadImageTexture("img.jpg" , width, height );
-    }
+         
+        img1.INIT();
+        img2.INIT();
+     }
     virtual void RUN() override
     {
-        ImGui::Begin("OpenGL Texture Text");
  
-         
+        ImGui::Begin("OpenGL Texture Text");
 
-        ImGui::Text("pointer = %p", (void *)(intptr_t)textureID);
-        ImGui::Image((void *)(intptr_t)(this->textureID), ImVec2(width, height));
-
+        img1.Info();
+        // img2.Info();
+        img1.Draw(ImVec2(0, 1),ImVec2(1, 0));
+        img2.Draw(ImVec2(0, 1),ImVec2(1, 0));
+ 
         ImGui::End();
         ImGui::ShowDemoWindow();
     }
 
 private:
-    GLuint textureID;
-    int width, height ; 
+    GLuint textureID ;
+    int size[2];
+    int level = 0;
     GLuint LoadImageTexture(const char *imagePath, int &width, int &height)
     {
         stbi_set_flip_vertically_on_load(true);
@@ -53,7 +60,7 @@ private:
         GLuint textureID;
         glGenTextures(1, &textureID);
         glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+        glTexImage2D(GL_TEXTURE_2D, this->level, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 
         stbi_image_free(image);
 

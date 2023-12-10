@@ -76,13 +76,15 @@ endif
 GENERATED :=
 OBJECTS :=
 
+GENERATED += $(OBJDIR)/Image.o
+GENERATED += $(OBJDIR)/Vector.o
 GENERATED += $(OBJDIR)/Win.o
-GENERATED += $(OBJDIR)/bruh.o
 GENERATED += $(OBJDIR)/imgui_impl_glfw.o
 GENERATED += $(OBJDIR)/imgui_impl_opengl3.o
 GENERATED += $(OBJDIR)/main.o
+OBJECTS += $(OBJDIR)/Image.o
+OBJECTS += $(OBJDIR)/Vector.o
 OBJECTS += $(OBJDIR)/Win.o
-OBJECTS += $(OBJDIR)/bruh.o
 OBJECTS += $(OBJDIR)/imgui_impl_glfw.o
 OBJECTS += $(OBJDIR)/imgui_impl_opengl3.o
 OBJECTS += $(OBJDIR)/main.o
@@ -149,7 +151,7 @@ endif
 # File Rules
 # #############################################
 
-$(OBJDIR)/bruh.o: src/bruh.cpp
+$(OBJDIR)/Image.o: src/core/Image.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/Win.o: src/core/Win.cpp
@@ -162,6 +164,9 @@ $(OBJDIR)/imgui_impl_opengl3.o: src/imgui/imgui_impl_opengl3.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/main.o: src/main.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Vector.o: src/math/Vector.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

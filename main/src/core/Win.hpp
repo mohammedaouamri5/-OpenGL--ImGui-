@@ -1,4 +1,3 @@
-#pragma once
 
 #ifndef _WIN_H_
 #define _WIN_H_
