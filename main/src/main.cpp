@@ -19,14 +19,14 @@ void Test()
 class ExampleLayer : public CORE::Layout
 {
     
-    CORE::Image img1 = CORE::Image("img/WOW.png"  , GL_RGBA);
-    CORE::Image img2 = CORE::Image("img/WOW.png"  , GL_RGBA);
+    CORE::Image img1 = CORE::Image("img/img.jpg"  , GL_RGBA);
+    // CORE::Image img2 = CORE::Image("img/img.png"  , GL_RGBA);
 public:
     virtual void INIT() override
     {
          
         img1.INIT();
-        img2.INIT();
+        // img2.INIT();
      }
     virtual void RUN() override
     {
@@ -35,8 +35,9 @@ public:
 
         img1.Info();
         // img2.Info();
-        img1.Draw(ImVec2(0, 1),ImVec2(1, 0));
-        img2.Draw(ImVec2(0, 1),ImVec2(1, 0));
+        // img1.Draw(ImVec2(0, 1),ImVec2(1, 0));
+        img1.Draw(ImVec2(0, 0),ImVec2(1, 1));
+        // img2.Draw(ImVec2(0, 1),ImVec2(1, 0));
  
         ImGui::End();
         ImGui::ShowDemoWindow();

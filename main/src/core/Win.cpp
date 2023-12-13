@@ -61,8 +61,8 @@ namespace CORE
                                                                   // io.ConfigViewportsNoTaskBarIcon = true;
         }
         // Setup Dear ImGui style
-        ImGui::StyleColorsDark();
-        // ImGui::StyleColorsLight();
+        // ImGui::StyleColorsDark();
+        ImGui::StyleColorsLight();
        // ImGuiIO &io = ImGui::GetIO();
 
         // Whesrc/core/Win.cpp:136:13n viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
@@ -89,9 +89,9 @@ namespace CORE
         // - Our Emscripten build process allows embedding fonts to be accessible at runtime from the "fonts/" folder. See Makefile.emscripten for details.
         // io.Fonts->AddFontDefault();
         // io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\segoeui.ttf", 18.0f);
-        // io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
-        // io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
-        // io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
+        io.Fonts->AddFontFromFileTTF("vendor/imgui/misc/fonts/DroidSans.ttf", 16.0f);
+        io.Fonts->AddFontFromFileTTF("vendor/imgui/misc/fonts/DroidSans.ttf", 16.0f);
+        io.Fonts->AddFontFromFileTTF("vendor/imgui/misc/fonts/Cousine-Regular.ttf", 15.0f);
         // ImFont* font = io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
         // IM_ASSERT(font != nullptr);
 
@@ -115,6 +115,7 @@ namespace CORE
         {
             // init the loop
             this->INIT_LOOP();
+            
 
             for (Layout *&layout : this->Layouts)
                 layout->RUN();
