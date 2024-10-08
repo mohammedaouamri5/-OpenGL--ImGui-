@@ -25,12 +25,12 @@ else ifeq ($(config),release)
   main_config = release
 
 else ifeq ($(config),dist)
-  ImGui_config = dist   
-  GLFW_config = dist   
-  yaml_cpp_config = dist   
-  stb_image_config = dist   
-  SOIL_config = dist   
-  main_config = dist   
+  ImGui_config = dist
+  GLFW_config = dist
+  yaml_cpp_config = dist
+  stb_image_config = dist
+  SOIL_config = dist
+  main_config = dist
 
 else
   $(error "invalid configuration $(config)")

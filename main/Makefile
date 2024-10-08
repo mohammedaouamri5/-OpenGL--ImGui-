@@ -76,12 +76,14 @@ endif
 GENERATED :=
 OBJECTS :=
 
+GENERATED += $(OBJDIR)/Font.o
 GENERATED += $(OBJDIR)/Image.o
 GENERATED += $(OBJDIR)/Vector.o
 GENERATED += $(OBJDIR)/Win.o
 GENERATED += $(OBJDIR)/imgui_impl_glfw.o
 GENERATED += $(OBJDIR)/imgui_impl_opengl3.o
 GENERATED += $(OBJDIR)/main.o
+OBJECTS += $(OBJDIR)/Font.o
 OBJECTS += $(OBJDIR)/Image.o
 OBJECTS += $(OBJDIR)/Vector.o
 OBJECTS += $(OBJDIR)/Win.o
@@ -151,6 +153,9 @@ endif
 # File Rules
 # #############################################
 
+$(OBJDIR)/Font.o: src/core/Font.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/Image.o: src/core/Image.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"

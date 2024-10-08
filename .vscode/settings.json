@@ -98,6 +98,7 @@
     ],
     "editor.fontFamily": "FiraCode Nerd Font",
     "C_Cpp.debugger.useBacktickCommandSubstitution": true,
-    "makefile.buildLog": "/home/midou/DEV/C++/[OpenGL][ImGui]/LOG.LOG"
+    "makefile.buildLog": "/home/midou/DEV/C++/[OpenGL][ImGui]/LOG.LOG",
+    "cmake.sourceDirectory": "/home/mohammedaouamri/DEV/-OpenGL--ImGui-/vendor/GLFW/tests"
    
 }
